@@ -1,0 +1,35 @@
+{%  extends 'boards/main.html' %}
+{% load static %}
+{% block content %}
+
+
+{% for post in posts %}
+
+<div class="highlight">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="intro">
+                    <h2>{{post.title}}</h2>
+                    <p>Category: {{post.category}}</p>
+                    <p>{{post.date_created}}</p>
+                    {% if post.underWork == True %}
+                    <p>Under Consideration</p>
+                    {% endif %}
+                    <p>By: {{post.user}}</p>
+                    <hr>
+                    <a class="btn btn-primary" href="{% url 'viewPost' post.id %} ">View</a>
+                    {% if post.user == request.user and post.underWork == False %}
+                    <a class="btn btn-warning" href="{% url 'updatePost' post.id %} ">Edit</a>
+                    <a class="btn btn-danger" href="{% url 'deletePost' post.id %} ">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

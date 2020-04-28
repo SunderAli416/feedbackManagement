@@ -1,0 +1,22 @@
+{%  extends 'boards/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                <div class="intro">
+                    <h1 class="text-center">{{post.title}}</h1>
+                    <p class="text-center"><span class="by">by</span><a href="#">{{post.user}}</a><span class="date">{{post.date_created}}</span></p>
+                </div>
+                <div class="text">
+                   <p>{{post.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

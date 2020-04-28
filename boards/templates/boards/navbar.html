@@ -1,0 +1,18 @@
+{% load static %}
+
+
+
+
+
+    <nav class="navbar navbar-dark navbar-expand-md bg-primary">
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation" class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'feed' %}">Your Suggestions</a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'addPost' %}">Add Suggestion</a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
